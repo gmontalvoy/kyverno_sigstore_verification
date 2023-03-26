@@ -32,11 +32,14 @@ The above create the key to sign the image and a public key used by [Kyverno](ht
 
 Use the provided <em>Dockerfile</em> in this repository to create the image
 ```
-$ docker build -t DOCKERUSER/test:signed .
+$ docker build -t DOCKERUSER/test:signed -f Dockerfile_signed
 $ docker push DOCKERUSER/test:signed
+
+$ docker build -t DOCKERUSER/test:unsigned -f Dockerfile_unsigned
+$ docker push DOCKERUSER/test:unsigned
 ```
 
-Sign the image
+Sign one of the images
 ```
 $ cosign sign --key <KEYNAME>.key DOCKERUSER/test:signed
 ```
