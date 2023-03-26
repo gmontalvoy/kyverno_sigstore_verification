@@ -89,21 +89,19 @@ Kyverno policies can be used to manage certain situations before the admission c
 Let's create the policies
 
 ```
-$ kubectl create -f c_enforce.yaml
-clusterpolicy.kyverno.io/verify-image-prod created
-$ kubectl create -f c_audit.yaml
-clusterpolicy.kyverno.io/audit-unsigned-images created
+$ kubectl create -f cpolicy.yaml
+clusterpolicy.kyverno.io/check-image-signature created
 ```
 
-The above policies will prevent any unsigned image on a "prod" namespace while allowing deployment on any other namespace.
+The above policy will prevent any unsigned image on a "prod" namespace while allowing deployment on any other namespace.
 
 Kyverno policies are created as <em>clusterPolicy</em> objects
 
 ```
 $ kubectl get clusterpolicy
 NAME                    BACKGROUND   VALIDATE ACTION   READY   AGE
-audit-unsigned-images   false        Audit             true    35s
-verify-image-prod       false        Enforce           true    42s
+check-image-signature   false        Audit             true    24h
+
 ```
 
 Let's deploy an unsigned image to prod namespace
