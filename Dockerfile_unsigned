@@ -1,0 +1,3 @@
+FROM busybox
+LABEL signed="false"
+ENTRYPOINT [ "echo", "Signed verified application" ]
