@@ -91,6 +91,8 @@ helm install kyverno kyverno/kyverno -n kyverno --create-namespace --set replica
 Kyverno policies can be used to manage certain situations before the admission controller allow the object to be created.
 Let's create the policies
 
+:warning: <b>make sure you edit the file changing the PublicKey at the one you generated above</b>
+
 ```
 $ kubectl create -f cpolicy.yaml
 clusterpolicy.kyverno.io/check-image-signature created
