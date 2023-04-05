@@ -1,11 +1,10 @@
-# Image verification with Sysdig through the image verification
-This PoC covers image verification and events in Sysdig Secure.
+# Image verification through the image verification
+This PoC covers image verification.
 ## Prerequisites
 
 AWS account with permissions to manage EKS and EC2 modules
 DockerHub account configured
-Docker Container Runtime installed and running
-Sysdig UI
+Docker Container Runtime installed
 
 ### Image signature and verification
 Install cosign with homebrew
@@ -15,8 +14,8 @@ $ brew install cosign
 
 Clone the repository
 ```
-$ git clone git@github.com:gmontalvoy/ws_sysdig.git
-$ cd ws_sysdig
+$ git clone git@github.com:gmontalvoy/kyverno_sigstore_verification.git
+$ cd kyverno_sigstore_verification
 ```
 
 Generate key-pairs
